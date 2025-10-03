@@ -2,11 +2,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
-a1 = 15
-a2 = 15
+a1 = 21 # link lenth in cm
+a2 = 21 # link lenth in cm
 x0 = 0.0
 y0 = 0.0
-sens = 10
+sens = 1
 coords = []
 
 with open(r"Coords.txt", 'r') as fp:
@@ -30,7 +30,7 @@ spec = fig.add_gridspec(2, 4)
 ax1 = fig.add_subplot(spec[0,2:4], xlim=(0,len(tlin)))
 ax2 = fig.add_subplot(spec[1,2:4], xlim=(0,len(tlin)))
 #ax3 = fig.add_subplot(spec[1,2:4])
-ax = fig.add_subplot(spec[0:2,0:2], aspect='equal', autoscale_on=False, xlim=(-1,21), ylim=(-16,21))
+ax = fig.add_subplot(spec[0:2,0:2], aspect='equal', autoscale_on=False, xlim=(-5,30), ylim=(-22,30))
 ax.grid()
 ax1.grid()
 ax2.grid()
@@ -100,8 +100,8 @@ ax2.step(tlin,(180/np.pi)*q2sig, '-', color='#1f1fdf', lw = 1)
 # call the animation
 ani = animation.FuncAnimation(fig, animate, init_func=init, frames=cnt*sens, interval=(100)/6, blit=True, repeat=True)
 
-#print('start ani')
-#ani.save('2r_Robot_Animation.gif')
-#print('saved ani')
+print('start ani')
+ani.save('2r_Robot_Animation.gif')
+print('saved ani')
 
-plt.show()
+# plt.show()
