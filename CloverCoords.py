@@ -6,15 +6,15 @@ def clover(theta,scl,lfs,rot):
   return r
 
 points = 200
-x = 0
+x = 0  
 y = 0
 xc = []
 yc = []
-x0 = 10
-y0 = 10
-lfs = 4
-rot = np.pi/8
-scl = 1.2
+x0 = 10 # Clover center X
+y0 = 10 # Clover center Y
+lfs = 4 # leafs of the clover
+rot = np.pi/8 # rotation of the clover
+scl = 1.2 # scale of the clover
 r = 0
 theta = 0
 
